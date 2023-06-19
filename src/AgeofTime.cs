@@ -4,8 +4,9 @@ public static class AgeOfTime
 {
     public static string AgeofTime(this DateTimeOffset date)
     {
-        TimeSpan timeSincePost = DateTimeOffset.Now - date;
-
+        DateTime now = DateTime.Now;
+        TimeSpan timeSincePost = ( date - now ) ;
+      
         if (timeSincePost.TotalDays >= 365)
         {
             int years = (int)(timeSincePost.TotalDays / 365);
@@ -45,7 +46,8 @@ public static class AgeOfTime
     }
     public static string AgeofTime(this DateTime date)
     {
-        TimeSpan timeSincePost = DateTimeOffset.Now - date;
+        DateTime now = DateTime.Now;
+   TimeSpan timeSincePost = ( date - now ) ;
 
         if (timeSincePost.TotalDays >= 365)
         {
